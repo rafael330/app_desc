@@ -9,7 +9,7 @@ st.set_page_config(
         initial_sidebar_state="expanded"    
     )
 
-tab1, tab2 = st.tabs(['Formulário de solicitação','Status de dolicitação'])
+tab1, tab2 = st.tabs(['Formulário de solicitação','Status de solicitação'])
 
 with tab1:
     
