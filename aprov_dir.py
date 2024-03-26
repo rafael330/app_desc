@@ -23,9 +23,9 @@ dados = aba.get_all_records()
 df = pd.DataFrame(dados)
 df = df[df['Status atual'] == 'PENDENTE DE APROVAÇÃO']
 df["PREÇO TABELA"] = df["PREÇO TABELA"].astype(float)/100
-df['PREÇO TABELA'] = df['PREÇO TABELA'].apply(lambda x: '{:.2f}'.format(x))
+df['PREÇO TABELA'] = df['PREÇO TABELA'].apply(lambda x: '{:.2f}'.format(x).replace('.', ','))
 df["PREÇO NEGOCIADO"] = df["PREÇO NEGOCIADO"].astype(float)/100
-df['PREÇO NEGOCIADO'] = df['PREÇO NEGOCIADO'].apply(lambda x: '{:.2f}'.format(x)) 
+df['PREÇO NEGOCIADO'] = df['PREÇO NEGOCIADO'].apply(lambda x: '{:.2f}'.format(x).replace('.', ',')) 
 df['QUANTIDADE'] = df['QUANTIDADE'].astype(int).replace(".",",").replace(",",".")
 df = df[['FILIAL','NOME CLIENTE','CÓDIGO VENDEDOR','CÓDIGO DO PRODUTO','PREÇO TABELA','PREÇO NEGOCIADO','QUANTIDADE','url_aprovação']]
 
